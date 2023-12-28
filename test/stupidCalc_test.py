@@ -1,4 +1,4 @@
-from stupidCalc import add
+from src.stupidCalc import add
 
 
 def test_add():
