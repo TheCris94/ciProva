@@ -2,6 +2,7 @@ import pytest
 import xml.etree.ElementTree as ET
 from src.stupidCalc import add
 import requests
+import os
 
 url = 'https://api.github.com/repos/apache/commons-io/pulls'
 
@@ -17,9 +18,7 @@ def test_add():
 
 
 def test_api():
-    tree = ET.parse('config.xml')
-    root = tree.getroot()
-    token = "".join(root[0].text.split())
+    token = os.environ['GH_TOKEN']
     header = {"Authorization": "Bearer " + token}
     response = requests.get(url, headers=header)
     assert response.status_code == 200
