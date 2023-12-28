@@ -26,5 +26,5 @@ jobs:
         pip install pytest pytest-cov
     - name: Test with pytest
       run: |
-        cd..
+        cd ..
         pytest --cov-report html test --cov=.\src
